@@ -38,10 +38,15 @@ public class Lab3 {
                             + Math.pow(fifthUserValue - averageOfUserValues, 2))
                                                                             / 5);
 
-        System.out.println("The largest number of the five numbers is " + maxUserValue);
-        System.out.println("The smallest number of the five numbers is " + minUserValue);
-        System.out.println("The average of the five numbers is " +averageOfUserValues);
-        System.out.println("The standard deviation of the five numbers is " + standardDeviationOfUserValues);
+        String maxUserValueToThousandths = numberFormat.format(maxUserValue);
+        String minUserValueToThousandths = numberFormat.format(minUserValue);
+        String averageOfUserValuesToThousandths = numberFormat.format(averageOfUserValues);
+        String standardDeviationOfUserValuesToThousandths = numberFormat.format(standardDeviationOfUserValues);
+
+        System.out.println("The largest number of your five numbers is " + maxUserValueToThousandths);
+        System.out.println("The smallest number of your five numbers is " + minUserValueToThousandths);
+        System.out.println("The average of your five numbers is " +averageOfUserValuesToThousandths);
+        System.out.println("The standard deviation of your five numbers is " + standardDeviationOfUserValuesToThousandths);
 
     }
 }
