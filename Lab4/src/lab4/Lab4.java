@@ -35,7 +35,7 @@ public class Lab4 {
                 computerSelection = "spock";
             }
 
-            System.out.println("The computer chose " + computerSelection);
+            System.out.println("The computer chose " + computerSelection + ".");
 
             String gameResult;
             if ((userSelection.equalsIgnoreCase("rock") &&
