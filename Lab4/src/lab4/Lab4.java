@@ -7,58 +7,94 @@ public class Lab4 {
 
         Scanner keyboard = new Scanner(System.in);
 
-        String userSelection = "";
-        while ( !userSelection.equalsIgnoreCase("rock") &&
-                !userSelection.equalsIgnoreCase("paper") &&
-                !userSelection.equalsIgnoreCase("scissors") &&
-                !userSelection.equalsIgnoreCase("lizard") &&
-                !userSelection.equalsIgnoreCase("spock")) {
-            System.out.println("Pick either rock, paper, scissors, lizard, or spock");
-            userSelection = keyboard.nextLine();}
+//        startGame(keyboard);
 
-        int randomValue = (int)(Math.random() * 5);
+            String userSelection = "";
+            while (!userSelection.equalsIgnoreCase("rock") &&
+                    !userSelection.equalsIgnoreCase("paper") &&
+                    !userSelection.equalsIgnoreCase("scissors") &&
+                    !userSelection.equalsIgnoreCase("lizard") &&
+                    !userSelection.equalsIgnoreCase("spock")) {
+                System.out.println("Pick either rock, paper, scissors, lizard, or spock");
+                userSelection = keyboard.nextLine();
+            }
 
-        int rock = 1;
-        int paper = 2;
-        int scissors = 3;
-        int lizard = 4;
-        int spock = 5;
+            int randomValue = (int) (Math.random() * 5);
 
-        String computerSelection;
-        if (randomValue == 1){
-            computerSelection = "rock";}
-        else if (randomValue == 2){
-            computerSelection = "paper";}
-        else if (randomValue == 3){
-            computerSelection = "scissors";}
-        else if (randomValue == 4){
-            computerSelection = "lizard";}
-        else {computerSelection = "spock";}
+            String computerSelection;
+            if (randomValue == 1) {
+                computerSelection = "rock";
+            } else if (randomValue == 2) {
+                computerSelection = "paper";
+            } else if (randomValue == 3) {
+                computerSelection = "scissors";
+            } else if (randomValue == 4) {
+                computerSelection = "lizard";
+            } else {
+                computerSelection = "spock";
+            }
 
-        System.out.println("The computer chose " + computerSelection);
+            System.out.println("The computer chose " + computerSelection);
 
-        String gameResult;
-        if (userSelection.equalsIgnoreCase("rock") &&
-                computerSelection.equalsIgnoreCase("rock")){
-            gameResult = "You tied with the computer.";}
-        else if (userSelection.equalsIgnoreCase("rock") &&
-                (computerSelection.equalsIgnoreCase("scissors") ||
-                computerSelection.equalsIgnoreCase("lizard"))){
-            gameResult = "Congratulations! You won the game!";}
-        else if (userSelection.equalsIgnoreCase("rock") &&
-                (computerSelection.equalsIgnoreCase("paper") ||
-                computerSelection.equalsIgnoreCase("spock"))){
-            gameResult = "aaa";}
-//        else if (userSelection.equalsIgnoreCase(""))
+            String gameResult;
+            if ((userSelection.equalsIgnoreCase("rock") &&
+                    (computerSelection.equalsIgnoreCase("scissors") ||
+                            computerSelection.equalsIgnoreCase("lizard"))) ||
 
+                    (userSelection.equalsIgnoreCase("paper") &&
+                            (computerSelection.equalsIgnoreCase("rock") ||
+                                    computerSelection.equalsIgnoreCase("spock"))) ||
 
+                    (userSelection.equalsIgnoreCase("scissors") &&
+                            (computerSelection.equalsIgnoreCase("paper") ||
+                                    computerSelection.equalsIgnoreCase("lizard"))) ||
 
-//        else {gameResult = "bbb";}
+                    (userSelection.equalsIgnoreCase("lizard") &&
+                            (computerSelection.equalsIgnoreCase("paper") ||
+                                    computerSelection.equalsIgnoreCase("spock"))) ||
 
-        System.out.println(" " + gameResult);
+                    (userSelection.equalsIgnoreCase("spock") &&
+                            (computerSelection.equalsIgnoreCase("rock") ||
+                                    computerSelection.equalsIgnoreCase("scissors")))) {
+                gameResult = "Congratulations! You won the game!";
+            } else if ((userSelection.equalsIgnoreCase("rock") &&
+                    (computerSelection.equalsIgnoreCase("paper") ||
+                            computerSelection.equalsIgnoreCase("spock"))) ||
 
+                    (userSelection.equalsIgnoreCase("paper") &&
+                            (computerSelection.equalsIgnoreCase("scissors") ||
+                                    computerSelection.equalsIgnoreCase("lizard"))) ||
 
+                    (userSelection.equalsIgnoreCase("scissors") &&
+                            (computerSelection.equalsIgnoreCase("rock") ||
+                                    computerSelection.equalsIgnoreCase("spock"))) ||
 
+                    (userSelection.equalsIgnoreCase("lizard") &&
+                            (computerSelection.equalsIgnoreCase("rock") ||
+                                    computerSelection.equalsIgnoreCase("scissors"))) ||
+
+                    (userSelection.equalsIgnoreCase("spock") &&
+                            (computerSelection.equalsIgnoreCase("paper") ||
+                                    computerSelection.equalsIgnoreCase("lizard")))) {
+                gameResult = "You lost! The computer has won the game!";
+            } else {
+                gameResult = "You tied with the computer!";
+            }
+
+            System.out.println(gameResult);
+        }
+
+        playAgain = "";
+        while ( !playAgain.equalsIgnoreCase("y") &&
+                !playAgain.equalsIgnoreCase("n"))
+            {System.out.println("Do you want to play again? (y/n)");
+            playAgain = keyboard.nextLine();}
+
+//        if (playAgain.equalsIgnoreCase("y"))
+//            {System.out.println();
+//                startGame();}
+
+//        else {System.out.println("Thanks for playing!");}
 
     }
 }
