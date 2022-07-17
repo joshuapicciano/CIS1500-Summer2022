@@ -1,9 +1,10 @@
-package question16;
+package untitled;
 
 import java.util.Scanner;
 
-public class Question16 {
-    public static void main(String[] args) {
+public class Untitled {
+
+        public static void main(String[] args) {
 
         Scanner keyboard = new Scanner(System.in);
 
@@ -39,4 +40,4 @@ public class Question16 {
         System.out.println("Your test average excluding your lowest test score was " + averageScoreExcludingLowest);
 
     }
-}
+    }
